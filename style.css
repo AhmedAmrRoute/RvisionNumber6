@@ -1,9 +1,10 @@
 body{
     margin: 0;
+    counter-reset: tr   ;
 }
 .parent {
   display: grid;
-  min-height: 100vh;
+  max-height: 100vh;
   grid-template-columns: repeat(12,1fr);
   grid-template-rows: repeat(4 ,auto);
   grid-template-areas:
@@ -26,6 +27,7 @@ body{
     align-items: center;
     height: 100%;
     margin-top: 10px;
+    
 }
 .sidebar .content .LOGO{
     width: 20%;
@@ -49,7 +51,6 @@ body{
     align-items: center;
 }
 .sidebar .Links .Link:hover {
-
     background-color: rgb(0, 0, 0);
     color: white;
 }
@@ -66,11 +67,28 @@ body{
 .page{
     /* background-color: rgb(255, 0, 0); */
     grid-area: page;
+    overflow-y: scroll;
 }
 .page2{
     overflow: hidden;
     grid-area: page2;
     background-color: blue;
+}
+
+tr{
+    position: relative;
+}
+tr:hover::before{
+    opacity: 1;
+}
+tr::before{
+    counter-increment: tr;
+    content:"User Number : " counter(tr);
+    position: absolute;
+    top: 0;
+    opacity: 0;
+    right: 0;
+    background-color: aqua;
 }
 
 @media only screen and (min-width: 640px) {
