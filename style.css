@@ -1,0 +1,116 @@
+body{
+    margin: 0;
+}
+.parent {
+  display: grid;
+  min-height: 100vh;
+  grid-template-columns: repeat(12,1fr);
+  grid-template-rows: repeat(4 ,auto);
+  grid-template-areas:
+    "sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar sidebar "
+    "page page page page page page page page page page page page "
+    "page page page page page page page page page page page page "
+    "page2 page2 page2 page2 page2 page2 page2 page2 page2 page2 page2 page2 ";
+}
+.sidebar{
+    grid-area:sidebar ;
+    overflow: hidden;
+    background-color: rgba(140, 140, 140, 0.442);
+    height: 100%;
+    width: 100%;
+}
+.sidebar .content{
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    margin-top: 10px;
+}
+.sidebar .content .LOGO{
+    width: 20%;
+}
+.sidebar .content .LOGO img{
+    width: 100%;
+}
+.sidebar .Links{
+    padding: 0;
+    display: flex;
+}
+.sidebar .Links .Link{
+    list-style: none;
+    /* margin-bottom: 10px; */
+    /* background-color: rgb(180, 239, 239); */
+    padding: 10px 10px;
+    border-radius: 10px;
+    transition: all 0.1s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.sidebar .Links .Link:hover {
+
+    background-color: rgb(0, 0, 0);
+    color: white;
+}
+.sidebar .Links .Link:hover a {
+    color: white;
+}
+.sidebar .Links .Link a{
+    text-decoration: none;
+    color: black;
+    margin-left: 10px;
+    transition: all 1s;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+.page{
+    /* background-color: rgb(255, 0, 0); */
+    grid-area: page;
+}
+.page2{
+    overflow: hidden;
+    grid-area: page2;
+    background-color: blue;
+}
+
+@media only screen and (min-width: 640px) {
+}
+
+/* Medium devices such as tablets (768px and up) */
+@media only screen and (min-width: 768px) {
+
+}
+
+/* Large devices such as laptops (1024px and up) */
+@media only screen and (min-width: 1024px) {
+    .parent {
+        grid-template-rows: repeat(3 , 1fr);
+        grid-template-areas:
+          "sidebar sidebar page page page page page page page page2 page2 page2 "
+          "sidebar sidebar page page page page page page page page2 page2 page2 "
+          "sidebar sidebar page page page page page page page page2 page2 page2 ";
+      }
+      .sidebar{
+        grid-area:sidebar ;
+    }
+    .sidebar .content{
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+    }
+    .sidebar .content .LOGO{
+        width: 80%;
+    }
+    .sidebar .Links{
+        display: block;
+    }
+    .sidebar .Links .Link{
+        justify-content: left;
+    }
+
+}
+
+/* Largest devices such as desktops (1280px and up) */
+@media only screen and (min-width: 1280px) {
+
+}
